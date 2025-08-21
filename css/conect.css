@@ -1,0 +1,69 @@
+
+
+/* קופסה לטופס כניסה */
+.form-wrapper {
+    width: 17vw; /* רוחב טופס הכניסה */
+    animation: fadeInUp 1s ease-out; /* אנימציה לטופס */
+}
+
+/* עיצוב כללי לטופס */
+form {
+    padding: 2rem; /* ריפוד פנימי */
+    background: rgb(255, 251, 251); /* צבע רקע לטופס */
+    text-align: left; /* יישור טקסט לשמאל */
+    border-radius: 15px; /* פינות מעוגלות */
+}
+
+/* כותרת הטופס */
+h1 {
+    margin-bottom: 1.5rem; /* רווח מתחת לכותרת */
+    font-size: 2rem; /* גודל כותרת */
+    color: #4acbf9; /* צבע הכותרת */
+}
+
+/* עיצוב שדות הקלט */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: calc(100% - 1.6rem); /* רוחב שדה הקלט */
+    padding: 0.8rem; /* ריפוד פנימי */
+    border: 2px solid #ddd; /* גבול לשדה */
+    border-radius: 10px; /* פינות מעוגלות */
+    margin-bottom: 1rem; /* רווח מתחת לשדה */
+    font-size: 1rem; /* גודל טקסט */
+}
+
+/* עיצוב כפתורים */
+button {
+    background-color: #f599ec; /* צבע רקע לכפתור */
+    color: white; /* צבע טקסט לכפתור */
+    border: none; /* בלי גבול */
+    padding: 0.8rem 1.5rem; /* ריפוד פנימי */
+    border-radius: 10px; /* פינות מעוגלות */
+    font-size: 1.1rem; /* גודל טקסט */
+    cursor: pointer; /* מצביע יד על כפתור */
+    transition: all 0.3s ease; /* אנימציה על שינוי */
+}
+
+/* אנימציה קופצת */
+@keyframes bounceIn {
+    from {
+        opacity: 0; /* שקיפות התחלית */
+        transform: scale(0.5); /* גודל התחלתי */
+    }
+    to {
+        opacity: 1; /* שקיפות סופית */
+        transform: scale(1); /* גודל סופי */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

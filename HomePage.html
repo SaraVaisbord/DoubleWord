@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>דף הבית</title>
+    <link rel="icon" type="image/x-icon" href="imgs/dubble_1.png">
+    <link rel="stylesheet" href="css/homePage.css">
+</head>
+<body>
+    <div class="container">
+        <div id="welcome-text" style="direction: rtl;"> 
+        <p ><h3>!ברוכים הבאים לעולם של דאבל</h3>
+
+            הכנסו לממלכה המרגשת של דאבל, המשחק שיביא אתכם לאתגרים, מהירות ותחרות בלתי נגמרת <br>
+           <h3>?אז מה זה דאבל</h3>
+            דאבל הוא משחק קלפים מהיר ומלא אדרנלין שבו תצטרכו לזהות זוגות של סמלים לפני כולם  <br>
+            ? מי יצליח להיות המהיר ביותר? האם תצליחו לגלות את הזוגות המסתוריים ולנצח את היריבים שלכם <br>
+            <h3>?למה לבחור דאבל</h3>
+            מהירות ודיוק: תרגישו את הדופק שלכם עולה כשאתם מתמודדים עם חברים ומשפחה <br>
+            קל למידה: פשוט להתחיל, אבל תמיד יש מקום לשיפור. כל משחק הוא חוויה חדשה <br>
+            !מושלם לכל גיל: מתאים לילדים ולמבוגרים כאחד. משחק מהנה לכל המשפחה <br>
+             <h3>!הצטרפו אלינו </h3>
+            !היכנסו לעולם המופלא של דאבל, והוכיחו את היכולות שלכם. האם אתם מוכנים לאתגר? התחילו לשחק עכשיו</p>
+        </div>
+            <div class="button-container">
+            <button id="in">להתחברות</button>
+            <button id="up">להרשמה</button>
+        </div>
+
+        <!-- טופס התחברות -->
+        <div id="loginContainer" class="login-container hidden">
+            <img src="imgs/חתול מציץ.webp" alt="Character Image" class="login-character-image">
+            <div class="form-wrapper">
+                <form id="loginFormWrapper">
+                    <h1>התחברות</h1>
+                    <label for="namelogin" id="name"></label>
+                    <input type="text" id="namelogin" placeholder="הכנס את שמך" required>
+                    <label for="passwordlogin" id="password"></label>
+                    <input type="password" id="passwordlogin" placeholder="הכנס סיסמה" required>     
+                    <button type="submit" id="log">התחבר</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- טופס הרשמה -->
+        <div id="signupContainer" class="signup-container hidden">
+            <img src="imgs/חתול צד.webp" alt="Character Image" class="signup-character-image">
+            <div class="signup-form-wrapper">
+                <form id="registrationFormWrapper">
+                    <h1>הרשמה</h1>
+                    <label for="nameSignUp"></label>
+                    <input id="nameSignUp" type="text" placeholder="הכנס את שמך" required>
+                    <input id="emailSignUp" type="email" placeholder="אימייל" required>
+                    <input type="password" id="passwordSignUp" placeholder="הכנס סיסמה" required>
+                    <label for="passwordSignUp" id="155"></label>
+                    <input id="passwordValid" type="password" placeholder="אימות סיסמה" required>
+                    <button type="submit" id="signUp">הרשם</button>
+                </form>
+            </div>
+        </div>
+    </div>  
+    <script src="js/general.js"></script>
+    <script src="js/connect.js"></script>
+
+</body>
+</html>

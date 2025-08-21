@@ -1,0 +1,90 @@
+
+body, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-image: url('../imgs/מסך\ הבית.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* כותרת */
+ h1 {
+    margin-bottom: 7%;
+    margin-left: 60%;
+    font-size: 1.5rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    color:#511271;;
+    text-align: right;
+
+    
+}
+
+.p{
+    color: aliceblue;
+}
+.button-container {
+    display: flex; /* סידור באופק */
+    justify-content: center; /* מרכז את הכפתורים */
+    width: 100%; /* תפס את כל רוחב המסך */
+}
+
+/* כפתורים לבחירת רמה */
+.level-button {
+    margin: 0 1rem; /* מרווח בין הכפתורים */
+    display: flex;
+    flex-direction: column; /* סידור בטור */
+    align-items: center; /* מרכז את התוכן */
+    width: 20vw; /* גודל קבוע לכפתורים */
+    z-index: 0;
+}
+
+/* Cat image styling */
+.cat-image {
+    width: 10vw; /* גובה החתול */
+    margin-bottom: -0.4rem;
+    z-index: 1;
+}
+/* Button styling */
+button {
+    background-color: #5149a1; /* צבע בהיר */
+    color: white;
+    border: none;
+    padding: 1.5rem; /* גובה הכפתור */
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%; /* גודל הכפתור יהיה 100% מתוך הכרטיס */
+    position: relative; /* הכפתור יוכל להכיל את המסגרת */
+}
+
+/* Button hover effect */
+button:hover {
+    box-shadow: 0 0 10px #8f6cbd; /* אפקט מסגרת זורחת */
+}
+
+/* Description styling */
+.level-button p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-align: center; /* מרכז את התיאור */
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>דף המשחק</title>
+    <link rel="icon" type="image/x-icon" href="../imgs/dubble_1.png">
+    <link rel="stylesheet" href="../css/styleGame.css">
+</head>
+<body id="b">
+    <h1></h1>
+    <div id="scoreboard" class="scoreboard">ניקוד: 0</div>
+    <audio src="../imgs/מחיאות כפיים.mp3"  id="sound"></audio>
+    <audio src="../imgs/v.mp3" id="vSound"></audio>
+    <audio src="../imgs/x.mp3" id="xSound"></audio>
+<!-- פלט למשתמש לגבי הניחוש שלו -->
+<div id="message" class="message"></div>
+    <div id="cardContainer">
+    <img src="../imgs/x.png" alt="" id="x"><img src="../imgs/v.png" alt="" id="v"><div id="card1"></div>
+    <img src="../imgs/x.png" alt="" id="x1"><img src="../imgs/v.png" alt="" id="v1"><div id="card2"></div></div>
+    
+    <div id="overlay" class="overlay">
+        <div class="popup">
+            <img src="../imgs/levelUp.png" alt="">
+        </div>
+    </div>
+    <script src="../js/gameApp.js"></script>
+    <script src="../js/general.js"></script>
+
+</body>
+</html>

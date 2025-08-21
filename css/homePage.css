@@ -1,0 +1,228 @@
+/* הגדרות כלליות */
+body {
+    background-color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #ffffff;
+    background-image: url('../imgs/מסך\ הבית.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between; /* פיזור התוכן בין שני הצדדים */
+    align-items: flex-start; /* למקם את התוכן למעלה */
+    height: 100vh;
+}
+
+/* קונטיינר לטקסט וכפתורים */
+.text-container {
+    display: flex;
+    flex-direction: column; /* טקסט למעלה למטה */
+    align-items: flex-end; /* יישור לימין */
+    padding: 20px; /* רווח פנימי */
+    width: 40%; /* רוחב קונטיינר */
+    margin-right: 20px; /* רווח בצד ימין */
+}
+
+.welcome-text {
+    text-align: right; /* יישור טקסט מימין */
+    direction: ltr; /* כיוון הטקסט מימין לשמאל */
+    margin-bottom: 20px; /* רווח מתחת לפסקה */
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* ממקם את הכפתורים לימין */
+    margin-top: 20px; /* רווח מעל הכפתורים */
+}
+
+/* קונטיינר לטופס */
+.signup-container, .login-container {
+    background-color: rgb(255, 252, 252);
+    border: 4px black;
+    border-radius: 10px;
+    position: relative;
+    height: 55vh;
+    width: 17vw; /* רוחב הטופס */
+    display: none; /* בהתחלה, לא מוצג */
+    padding: 1.2rem;
+    z-index: 0;
+    animation: bounceIn 1s ease-out;
+}
+
+/* מיקום הטפסים בצד שמאל */
+.form-container {
+    display: flex;
+    flex-direction: column; /* טופס אחד מתחת לשני */
+    align-items: flex-start; /* יישור שמאלה */
+    width: 40%; /* רוחב קונטיינר */
+    margin-left: 20px; /* רווח בצד שמאל */
+}
+
+/* עיצוב כותרות */
+h1 {
+    font-size: 20px;
+}
+
+/* כפתורים */
+button {
+    width: 14vw; /* הכפתור יתפוס את כל הרוחב של הקונטיינר */
+    height: 7vh;
+    background-color: #1c5f93; /* צבע הכפתור */
+    color: white; /* צבע טקסט לבן */
+    border: none; /* ללא גבול */
+    border-radius: 5px; /* עגלול את הקצוות */
+    padding: 0.5rem; /* רווח פנימי */
+    margin: 7%;
+    cursor: pointer; /* שינוי עכבר לכיוון יד */
+    transition: background-color 0.3s; /* אנימציה בזמן מעבר */
+}
+
+button:hover {
+    background-color: #5a7fbc; /* צבע הכפתור בעת מעבר */
+}
+
+.container {
+    position: absolute;
+    left: 55%; /* הזז לצד שמאל */
+    top: 25%; /* אם אתה רוצה למקם אותו למעלה */
+}
+
+/* קונטיינר לטופס */
+.signup-container {
+    border-radius: 10px;
+    position: relative;
+    height: 55vh;
+    width: 17vw; /* רוחב הטופס */
+    display: none; /* בהתחלה, לא מוצג */
+    margin-left: 80%;
+    margin-top:5%;
+    padding:1.2rem;
+    z-index: 10;
+    animation: bounceIn 1s ease-out; 
+}
+
+/* קונטיינר לכניסה */
+.login-container {
+    flex-direction: column; /* מקם את התמונה מעל הטופס */
+    align-items: center; /* למרכז את התוכן */
+    height: 38vh;
+    width: 15vw;
+    border-radius: 10px;
+    position: relative;
+    display: none; /* בהתחלה, לא מוצג */
+    margin-left: 80%;
+    margin-top: 20%;
+    padding:1.2rem;
+    z-index: 10;
+    animation: bounceIn 1s ease-out; /* אנימציה כשנכנסים */
+}
+.login-character-image {
+    height: 18vh; /* גובה התמונה */
+    width: auto; /* לשמור על יחס גובה-רוחב */
+    margin-top: -61%;
+    animation: fadeInDown 1s ease-out; /* אנימציה לתמונה */
+    z-index: 11; /* סדר השכבות */
+}
+.signup-character-image {
+    height: 50vh; /* גובה התמונה */
+    width: auto; /* לשמור על יחס גובה-רוחב */
+    animation: fadeInDown 1s ease-out; /* אנימציה לתמונה */
+    margin-bottom: -0.5rem; /* רווח מתחת לתמונה */
+    margin-left: -88%;
+    z-index: 11; /* סדר השכבות */
+}
+/* הילה צבעונית סביב הטופס */
+.signup-container::before,
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, rgba(190, 196, 226, 0.8), rgba(173, 153, 226, 0.9),rgba(132, 94, 237, 0.9));
+    z-index: -1;
+    animation: 0.5s ease;
+}
+
+/* עיצוב כותרות */
+h1 {
+    font-size: 20px;
+}
+
+/* עיצוב שדות הקלט */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 70%; /* שדות קלט תופסים 70% */
+    padding: 10px;
+    margin: 10px auto; /* מרכז את השדות */
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.043);
+    color: #ffffff;
+    transition: background-color 0.3s;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* עיצוב ה-placeholder */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.567);
+    font-style: italic;
+}
+
+/* עיצוב כפתור ההגשה */
+button[type="submit"] {
+    background-color: #3059846e;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 50%; /* כפתור באורך קטן יחסית */
+    margin: 10px auto; /* מרכז את הכפתור */
+}
+
+button[type="submit"]:hover {
+    background-color: #134f768e;
+}
+
+
+/* הסתרת הטפסים */
+.hidden {
+    display: none;
+}
+/* Animation effect */
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2); /* צבע שקוף */
+    border-radius: 50%; /* עגלול את הקצוות */
+    transition: transform 0.5s ease; /* אנימציה חלקה */
+    transform: translate(-50%, -50%) scale(0); /* מתחיל קטן */
+    z-index: 0; /* מתחת לתוכן הכפתור */
+}
+
+
+@keyframes bounceIn {
+    from {
+        opacity: 0; /* שקיפות התחלית */
+        transform: scale(0.5); /* גודל התחלתי */
+    }
+    to {
+        opacity: 1; /* שקיפות סופית */
+        transform: scale(1); /* גודל סופי */
+    }
+}
