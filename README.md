@@ -1,170 +1,48 @@
-# 🎯 Double Game - משחק דאבל דיגיטלי
+🎯 Double Word – Educational Digital Dobble
 
-> יישום אינטראקטיבי מתקדם של המשחק הפופולרי דאבל עם לוגיקה מתמטית מורכבת
+An educational “doubles” game that supports early reading skills by pairing words with visual images.
+Designed to help learners — including dyslexic readers — recognize patterns, strengthen decoding, and build rapid word–image association.
 
-## 📋 תיאור הפרויקט
+📋 Overview
 
-משחק דאבל דיגיטלי המממש את הלוגיקה המתמטית המקורית של המשחק: כל כרטיס מכיל 8 סמלים שונים, כאשר בין כל זוג כרטיסים קיים **בדיוק סמל אחד משותף**. השחקן צריך לזהות במהירות את הסמל המשותף מתוך 16 אפשרויות.
+Double Word adapts the classic Dobble/Spot It! mechanic to literacy practice: each card shows 8 items, and exactly one word–image pair is common to any two cards. Behind the scenes, cards are shuffled with a uniform Fisher–Yates algorithm; the UI uses event-driven updates and dynamic DOM rendering for a smooth experience.
 
-## 🎮 איך המשחק עובד?
+🎮 How to Play
 
-### הלוגיקה המתמטית
-- **כרטיס 1**: סמלים 0-6 + סמל משותף (25)
-- **כרטיס 2**: סמלים 7-13 + אותו סמל משותף (25)
-- **התוצאה**: רק זוג אחד תואם בין 16 הסמלים
+Two cards appear, each with 8 items (mix of words and images).
 
-### מכניקת המשחק
-1. השחקן רואה שני כרטיסים עם 8 סמלים כל אחד
-2. צריך למצוא את הסמל המשותף היחיד
-3. לחיצה על זוג נכון = +5 נקודות
-4. לחיצה על זוג שגוי = -1 נקודה
-5. המשחק מתחדש אוטומטית כל 90 שניות
+Find the single matching word–image pair across both cards.
 
-## 🛠️ סטאק טכנולוגי
+Correct match: +5 · Wrong guess: –1.
 
-### Frontend
-- **HTML5** - מבנה הדפים
-- **CSS3** - עיצוב ואנימציות מתקדמות
-- **Vanilla JavaScript (ES6+)** - לוגיקה עסקית מלאה
+New round starts automatically every 90s.
 
-### Data Management
-- **LocalStorage API** - שמירת נתונים מתמשכת
-- **JSON** - פורמט אחסון נתונים
+🌟 Key Features
 
-### Assets
-- **128+ PNG Images** - סמלים ותמונות משחק
-- **MP3 Audio Files** - אפקטי קול
-- **WebP Images** - תמונות רקע מותאמות
+Literacy-focused gameplay: strengthens word recognition via immediate visual pairing.
 
-## 🏗️ ארכיטקטורה
+Accessible by design: optional dyslexia-friendly font, adjustable contrast & font size, keyboard navigation, and reduced motion mode.
 
-### מבנה הפרויקט
-```
-double-game/
-├── html/           # דפי HTML
-├── css/            # קבצי עיצוב
-├── js/             # לוגיקה עסקית
-├── imgs/           # נכסי תמונה
-│   ├── img1-3/     # סמלי תמונות לרמות
-│   └── word1-3/    # סמלי מילים לרמות
-└── HomePage.html   # דף הבית
-```
+Responsive UI: desktop & mobile.
 
-### מודולים עיקריים
-- **gameApp.js** - לוגיקת המשחק הראשית
-- **general.js** - פונקציות עזר כלליות
-- **levels.js** - ניהול רמות
-- **connect.js** - חיבור בין רכיבים
-- **endPage.js** - מסך סיום
+Progress tracking: score & high score saved with LocalStorage.
 
-## 🧮 אלגוריתמים מתקדמים
+Multiple difficulty levels to scale challenge.
 
-### Fisher-Yates Shuffle Algorithm
-```javascript
-function shuffle(id) {
-    let arr = loadFromLocalStorage(id);
-    for (let i = arr.length - 1; i > 0; i--) {
-        let randNum = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[randNum]] = [arr[randNum], arr[i]];
-    }
-    saveToLocalStorage(arr, id);
-}
-```
+🚀 Getting Started
 
-### לוגיקת יצירת כרטיסים
-```javascript
-// יצירת סמלים ייחודיים עם ID משותף
-let id = a + i + j;  // ID ייחודי לכל סמל
-let icon = {
-    img: `../imgs/img${i + 1}/${j}.png`,
-    word: `../imgs/word${i + 1}/${j}.png`,
-    id: id  // אותו ID לתמונה ולמילה
-};
-```
+Clone the repo and open HomePage.html in a modern browser.
 
-### אלגוריתם בדיקת התאמה
-```javascript
-if (card1ch === card2ch) {
-    // התאמה נכונה - אותו ID
-    counterS += 5;
-} else {
-    // התאמה שגויה - ID שונה
-    counterS -= 1;
-}
-```
+Requirements: ES6+ browser, LocalStorage, MP3 playback support.
 
-## 🎯 תכונות מתקדמות
+📌 Roadmap
 
-### ניהול מצב (State Management)
-- שמירת התקדמות בזמן אמת
-- מעקב אחר ניקוד גבוה
-- שחזור מצב משחק
+ Multiplayer practice mode
 
-### חוויית משתמש (UX)
-- משוב ויזואלי מיידי (✓/✗)
-- אפקטי קול דינמיים
-- אנימציות CSS מתקדמות
-- עדכון אוטומטי של כרטיסים
+ Global/School leaderboard
 
-### רמות קושי
-- **רמה 1**: 45 סמלים שונים
-- **רמה 2**: 40 סמלים שונים  
-- **רמה 3**: 43 סמלים שונים
+ Teacher dashboard (groups, word lists, analytics)
 
-## 🚀 התקנה והרצה
+ Custom word/image sets per learner
 
-1. **Clone הפרויקט**
-```bash
-git clone [repository-url]
-cd double-game
-```
-
-2. **פתיחת המשחק**
-```bash
-# פתח את HomePage.html בדפדפן
-open HomePage.html
-```
-
-3. **דרישות מערכת**
-- דפדפן מודרני התומך ב-ES6+
-- תמיכה ב-LocalStorage
-- תמיכה בהשמעת MP3
-
-## 🎮 הוראות משחק
-
-1. בחר רמת קושי (1-3)
-2. חפש את הסמל המשותף בין שני הכרטיסים
-3. לחץ על הסמל בכרטיס הראשון ואז על הסמל התואם בכרטיס השני
-4. צבור נקודות והגע לשיא חדש!
-
-## 🏆 מאפיינים טכניים מתקדמים
-
-- **Event-Driven Architecture** - תגובה מיידית לפעולות משתמש
-- **Dynamic DOM Manipulation** - יצירת אלמנטים בזמן אמת
-- **Responsive Design** - התאמה לכל גודלי מסך
-- **Performance Optimization** - טעינה מהירה ותגובתיות גבוהה
-- **Cross-Browser Compatibility** - תמיכה בכל הדפדפנים המודרניים
-
-## 📊 מדדי ביצועים
-
-- **זמן טעינה**: < 2 שניות
-- **זמן תגובה**: < 100ms
-- **נכסי תמונה**: 128+ קבצים מותאמים
-- **קוד JavaScript**: 5 מודולים מובנים
-
-## 🔧 פיתוח עתידי
-
-- [ ] מצב רב-משתתפים
-- [ ] טבלת שיאים גלובלית
-- [ ] רמות קושי נוספות
-- [ ] מצב אימון מודרך
-- [ ] תמיכה במובייל משופרת
-
-## 👨‍💻 מפתח
-
-פותח במסגרת לימודי תכנות - שנה א'  
-דגש על לוגיקה מתמטית ואלגוריתמים מתקדמים
-
----
-
-**🎯 Double Game - Where Math Meets Fun!**
+ Expanded accessibility: color-blind palettes & timing controls
